@@ -3,6 +3,13 @@ import {firebaseApp} from '../config/firebase'
 
 const $ = document.querySelector.bind(document)
 
+let localStorageLogin = localStorage.getItem('tryLogin')
+let localStorageLoginNumber: number = Number(localStorageLogin) || 0
+
+ if(localStorageLoginNumber >= 5) {
+     location.href = 'blocked.html'
+ }
+
 const onSubmitLoginForm = (event: Event) => {
     event.preventDefault()
 
@@ -10,21 +17,32 @@ const onSubmitLoginForm = (event: Event) => {
     const password = (<HTMLInputElement>$('#password')).value // pega o valor inserido no input da senha
 
     const auth = getAuth(firebaseApp) // conecta com a autenticação do firebase no site do firebase (caso estiver autorizado lá)
-
+    
     // sobre a função abaixo signInWithEmailAndPassword: temos que lidar com uma Promise (ele promete a tentativa da autenticação, mas não tem como garantir que não retorne erro)
     signInWithEmailAndPassword(auth, email, password)
         .then(async userCredential => {  // se sucesso, grava o token no local storage e redireciona pra pagina index
+            localStorage.setItem('tryLogin','0')
             const {user} = userCredential // pega o trecho de dados de usuario (user) atraves de associação por destruturação 
             const idToken = await user.getIdToken() //pega o idToken do usuario usado async await porque a função getIdToken() é uma Promise
             localStorage.setItem('token', idToken) // cria e armazena no local storageo token do usuario
             location.href = 'index.html' // redireciona para a página index
+            
+            
         }) 
         .catch(error => {
             console.log(error)
             const errorParagraph = <HTMLParagraphElement>document.createElement('p') // cria um novo elemento do tipo paragrafo e armazena na constante
             errorParagraph.innerText = 'Credênciais inválidas' // insere uma mensagem no parágrafo, mas ainda fica armazenado apenas na nemória
             const app = <HTMLDivElement>$('#app') // recupera o elemento de id app da pagina de login
-            app.insertAdjacentElement('beforeend', errorParagraph) // renderiza na tela o erro
+            app.insertAdjacentElement('beforeend', errorParagraph) // renderiza na tela o erro  
+
+            localStorageLoginNumber += 1
+            console.log('Tentativa: ' + localStorageLoginNumber)
+            localStorage.setItem('tryLogin', localStorageLoginNumber.toString())
+            
+            if (localStorageLoginNumber >= 5) {
+                location.href = 'blocked.html'
+            }
         })
 }
 
