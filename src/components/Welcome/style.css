@@ -1,0 +1,23 @@
+#welcome {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#welcome h1 {
+    font-family: 'bold';
+}
+
+#logout {
+    display: block;
+    width: 100px;
+    margin: 20px auto 0px auto;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-family: 'bold';
+    font-size: 100%;
+    color: #fff;
+    background-color: #cf000f;
+    cursor: pointer;
+    text-decoration: none;
+}

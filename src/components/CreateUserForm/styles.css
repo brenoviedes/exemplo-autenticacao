@@ -1,0 +1,13 @@
+#success-message {
+  background-color: #1e824c;
+  width: 400px;
+  display: block;
+  margin: 0 auto 15px auto;
+  text-align: center;
+  color: #fff;
+  font-family: 'bold';
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+}

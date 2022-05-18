@@ -1,0 +1,41 @@
+#about {
+  width: 1000px;
+  font-family: 'bold';
+  text-align: center;
+  margin: 0 auto;
+  font-size: 130%;
+  text-shadow: 3px 2px 2px #ccc;
+}
+
+#links-about {
+  display: flex;
+  justify-content: end;
+  width: auto;
+  margin: 20px auto;
+}
+
+#links-about a {
+  margin-right: 20px;
+}
+
+#logout {
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-family: 'bold';
+  font-size: 100%;
+  color: #fff;
+  background-color: #c44d56;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#welcome {
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-family: 'bold';
+  font-size: 100%;
+  color: #fff;
+  background-color: #bf55ec;
+  cursor: pointer;
+  text-decoration: none;
+}

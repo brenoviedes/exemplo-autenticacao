@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+form {
+    width: 400px;
+    margin: 50px auto 20px auto;
+    box-shadow: 5px 5px 7px #d5b8ff, -1px -1px 3px #d5b8ff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+form div {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+}
+
+form label {
+    font-family: 'regular';
+}
+
+form input {
+    margin-left: auto;
+    height: 35px;
+    width: 280px;
+    border-radius: 5px;
+    border: 3px solid #f1e7fe;
+    font-family: 'regular';
+    font-size: 100%;
+    padding: 0 5px;
+}
+
+form input:focus {
+    outline: 3px solid #9f5afd;
+}
+
+form button {
+    display: block;
+    width: 150px;
+    margin: 20px auto 0px auto;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-family: 'bold';
+    font-size: 100%;
+    color: #fff;
+    background-color: #a537fd;
+    cursor: pointer;
+}
+
+#error-message {
+    width: 400px;
+    margin: 20px auto;
+    font-family: 'bold';
+    color: #fff;
+    background-color: #c44d56;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+#redirect-link {
+    background-color: #bf55ec;
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    font-family: 'bold';
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 8px;
+    cursor: pointer;
+}

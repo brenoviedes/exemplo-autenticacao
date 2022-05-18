@@ -1,0 +1,22 @@
+UTILIZANDO SERVIÇOS DE AUTENTICAÇÃO NO FIRBASE
+
+1 - entrar no firebase com a conta google
+2 - ir para o console (ao lado da imagem da conta) 
+3 - adicionar projeto
+4 - inserir o nome do projeto
+5 - prosseguir com a janela do google analytics e criar projeto
+6 - ir em authentication e primeiros passos
+7 - ir na aba sign-in method
+8 - ir em emailsenha
+9 - clicar somente na primeira chave E-mailsenha
+10 - clicar em salvar
+11 - clicar na engrenagem ao lado de Visao geral do projeto em cima a esquerda e em configurações do projeto
+12 - rolar para baixo no campo não hpa projetos e clicar no icone 
+13 - dar o nome para registrar app (nao precisa marcar o check-box)
+14 - registar app
+15 - AGORA NO VSCODE
+16 - dentro da pasta src, criar a pasta config
+17 - crirar dentro da pasta config o arquivo firebase.ts
+18 - copiar o codigo que o firebase gerou no site e colar no arquivo firebase.ts e acrescentar export na constante
+      app e renomear a const para para firebaseApp, ficando assim export const firebaseApp = initializeApp(firebaseConfig);
+19 - instalar a dependencia do firebase com yarn add firebase, no terminal do projeto

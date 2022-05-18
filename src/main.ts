@@ -1,14 +1,11 @@
-import { resetTryInIndex } from "./components/BlockedResetTry";
-import "./style.css";
+import renderWelcomePanel from './components/Welcome'
+import './styles.css'
 
-// const app = document.querySelector<HTMLDivElement>("#app")!
-const token = localStorage.getItem("token"); // busca o token de autenticação no local storage
-
-if (token) {  // verifica se existe o token, se está preenchido, com algum valor armazenado
-    resetTryInIndex()
+const $ = document.querySelector.bind(document)
+const app = <HTMLDivElement>$('#app')
+const token = localStorage.getItem('token')
+if (token) {
+  renderWelcomePanel(app)
 } else {
-    location.href = 'login.html' // se o token estiver vazio, redireciona o usuario para a pagina de login
+  window.location.href = 'login.html'
 }
-
-
-
